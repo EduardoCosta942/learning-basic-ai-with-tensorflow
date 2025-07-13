@@ -36,3 +36,49 @@ On the folder "pictures" the archive "basics_of_ai_Neurons_softmax" is represent
 
 # Basics of AI - Neurons (Regression - not a function)
 -> Whenever we are using values that do not need a binary classification or a group division, we are talking about real values and they do not need an activation function, because it will be only for the output layer, where only summing the inputs and adding the bias is enough. It suitable seeing that if there is any activation function, the output layer can deal to a non-linear result, which is good due to its accuracy.
+
+# Neural Network - Introduction
+-> Depending on the output you want, it will maybe require a neural network. Inspired by the structure of the human brain, this scheme connects differents neurons by layers (Input layer, Hidden Layers, Output Layers), being capable of learning patterns and relationships hidden in the data. By combining many neurons, this approach becames a foundation of modern AI applitactions that recognize images, understand speech and make predictions without a linear relation.
+
+On the folder "pictures" the archive "neural_network_introduction" is representing the described content.
+
+# Neural Network - Foundations of neural network (Input layer)
+-> The input layer is composed by at least 1 topic the AI will analyze, just like the input of a unique neuron, stated at the start of this page. The difference is that in a neural network, there will be more than 1 neuron to analyze the same input, increasing the capacity of an AI to find more complex patterns and to learn. The input should be distributted to every neuron, as shown by the picture.
+
+On the folder "pictures" the archive "neural_network_input_layer" is representing the described content.
+
+# Neural network - Foundations of neural network (Hidden layers)
+-> The layer responsable for processing the data and applying the activation function in order to find complex patterns represented by non-linear representations. It suitable noticing that every neuron from the same layer might receive the same input, however, they do have differents weights and biases, again, allowing the network to find specific patterns. It is important to mention that there can be more than 1 hidden layer, and the layer t will be used as parameter for layer t+1, following the same logic of the input layer.
+
+On the folder "pictures" the archive "neural_network_hidden_layer" is representing the described content.
+
+# Neural network - Foundations of neural network (Output layer)
+-> The output layer is the last layer of the neural network, here a neuron is going to apply weights and bias for the inputs forniced by the last hidden layer, getting together the calculations of every neuron. The amount of neurons in this layer depends on how many inputs are needed (1 input, 1 neuron). As the last layer, this has the responsability of translating the data for the context, this can be done by using the activations functions that are specific for output layers.
+
+# Neural network - Feedfoward
+-> The feedfoward is the process of getting the input and make every layer proecess this data, always using the previous layer (except for the input layer) as input. This process is the most commum, seen that if there is an output, it must have passed thourgh every layer.
+
+# Neural network - Backpropagation (introduction)
+-> Everything we have seen until now tells us how the output is processed, but, how does an AI model learn in fact? As stated previously, every neuron applies differents weights and biases to the data. Those values usually start with a random value, the neural network will just learn something when there is an update for them, making the result of each layer even more precise and reliable.
+
+# Neural network - Backpropagation (Mathematic foundations - Chain Rule - Derivative)
+-> One of the most used mathematic foundations for appying the backpropagation is the Chain Rule, but before that, what is a derivative? A derivative tells us the slope of the tangent to a curve (On AIs, the curve will be the non-linear representation after the activation function). The formula of it is: f'(x)=(f(x+h)-f(x))/h as h → 0. The reason why we use the derivative is because it measures how the function changes according to the input, in other words, the slope of the curve at each point.
+
+# Neural network - Backpropagation (Mathematic foundations - Chain Rule)
+-> The Chain Rule is a procedure to connect a function to another by a similar parameter. By this, it is possible to calculate the derivative of a funcion composed by another. For AI models, this help by allowing to idetfy how the information has been changed comparing the previous layers and neurons. The formula of this procedure is: f(g(x))=f'(gx)*g(x). An important thing to mention is that whenever we are using derivatives, we should represent them with the prefix: dy/dx, where y and x can vary according to the variale.
+
+# Neural network - Backpropagation (Mathematic foundations - Gradient Descent)
+-> The Gradient Descent is an optimization algorithm used to reduce the error between the predicted output and the real dataset. It works by calculating the gradient of the loss function with respect to the parameters and updating them until the error level is as close to 0 as possible.
+
+There are many ways to define the loss function, but the one I’ve learned is the Sum of Squared Residuals (SSR). Basically, the SSR is the sum of the squares of the differences between each actual data point and the predicted value: SSR = Σ(yᵢ − ŷᵢ)²
+
+By graphing the SSR (x = parameter, y = SSR) as the parameters change, the plot usually has a bowl shape. The point where the derivative of the loss function with respect to the parameter is closest to 0 represents the minimum error found by gradient descent.
+# Neural Network - Backpropagation
+-> The backpropagation is named like this because we start updating the values (weights and biases) from the output layer until the first layer of the hidden layer. The updated value is: θₜ₊₁=θₜ-η(d SSR / d θ). This means that the parameter is going to decrease the learnin rate times the derivative of the loss function with respect to the parameter. This will only work since the gradient indicates how far the parameter is from the loss function and mutiplying it by the learning rate allows the parameter to be updated slowly, increasing the precision of the gradient.
+
+How far the current layer is from the output layer also indicates the nescessity of derivating in a different way. The objective of the Chain Rule is to connect a data to another data using a comumn parameter, this also have to be done for neural networks. By a simple look, it is easy to notice that every neuron is connected somehow, just as the guide picture. To conect the loss function to the w1 of the example, we might run every intermediate layer: d e / d w1 = (d e / d f2) * (d f2 / d z2) * (d z2 / d f1) * (d f1 / d z1) * (d z1 / d w1), observe that it just connects to the activations functions, summatories and the specific wheigh/bias you will update. 
+
+# Credits
+Youtube Channel: Statquest with Josh Starmer
+Youtube Channel: codebasics
+Artificial Inteligence Assistant: ChatGPT - OpenAi
