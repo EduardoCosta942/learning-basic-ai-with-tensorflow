@@ -1,0 +1,2 @@
+model_checkpoint_path: "seventhclass"
+all_model_checkpoint_paths: "seventhclass"
